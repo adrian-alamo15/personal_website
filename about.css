@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 50px;
+  padding: 0;
+  background-color: #f3f3f3;
+}
+
+/* Center the content and set maximum width */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Style the heading */
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  color: #333;
+}
+
+/* Style sections */
+.section {
+  margin-top: 20px;
+}
+
+/* Style links */
+a {
+  color: #0077B5;
+  text-decoration: none;
+}
+
+/* Style links on hover */
+a:hover {
+  text-decoration: underline;
+}
+
+
