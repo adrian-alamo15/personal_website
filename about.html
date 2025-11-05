@@ -1,47 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" type="text/css" href="styles.css">
 <head>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alamo - AboutMe</title>
+    <title>Adrian Alamo – About</title>
+    <meta name="description" content="About Adrian Alamo – UC Berkeley CS student passionate about ML and software." />
+    <link rel="icon" href="/Users/adrian/Desktop/personal_website/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
-    <h1>Adrian Alamo</h1>
-    <img src="./imgs/Alamo_Adrian_Picture.jpeg" alt="selfportrait" class="center">
-    <h2>Summary</h2>
-    <p>
-        I am a first-generation, underrepresented Computer Science student from the inner-city of Los Angeles, 
-        CA attending Title I schools throughout my K-12 years. I have a passion for leveraging modern technologies 
-        such as AI and software development to drive innovation and solve real-world challenges. Currently pursuing 
-        a B.A. in Computer Science at the University of California, Berkeley, with coursework encompassing diverse areas 
-        such as data science, algorithms, computer security, computer architecture, engineering optimizations. 
-        Skilled in programming languages including Java, C, Python, Go and web technologies such as HTML, CSS, and JS.
-    </p>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html"><span class="brand-logo"></span> <span>Adrian Alamo</span></a>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <p>
-        With a strong foundation in software development and data analysis, I have successfully completed projects
-        that demonstrate my ability to design and implement solutions. Notably, I developed an end-to-end encrypted 
-        file sharing system utilizing cryptography and secure API design. I also contributed to a Google Maps-inspired 
-        project of the City of Berkeley, integrating AI algorithms for efficient navigation.
-    </p>
+    <main class="container content about">
+        <h1>About me</h1>
+        <div class="about-wrap">
+            <img src="./imgs/Alamo_Adrian_Picture.jpeg" alt="Portrait of Adrian Alamo" class="about-photo">
+            <div>
+                <p>
+        My name is Adrian Alamo, and I was born and raised in Westlake, Los Angeles, CA, where I primarily attended 
+        Title I schools from K-12. I am set to graduate from the University of California, Berkeley in Spring 2025 with a B.A. 
+        in Computer Science and a Minor in Chicanx/Latinx Studies. Throughout my academic career, I have gained expertise in 
+        data science, computer security, and software development, with proficiency in languages including Java, C, Python, and assembly.
+                </p>
 
-    <p>
-        During my internship as a Robotics Software Engineering INROADS Intern at CreateMe, I took ownership of a full-stack
-        flask web application project for a mathematical simulation of one of the company's main robotic projects. Additionally, 
-        I gained experience in object detection software and deep reinforcement learning projects. My strong problem-solving skills, 
-        coupled with knowledge of Azure, Git, and Docker, allowed me to contribute to high-level robotic and automation software systems.
-    </p>
+                <p>
+        In addition to my coursework, I collaborated with Professor Pablo Gonzalez from the Ethnic Studies Department to develop ARES, 
+        an Augmented Reality app that offers a virtual tour of UC Berkeley's political history using geolocation and AR technology. 
+        This project was completed in partnership with the Ethnic Studies Changemaker Studios. [More information on the app here.]
+                </p>
 
-    <p>
-        I am actively seeking opportunities to apply my technical skills and contribute to cutting-edge projects and research in areas 
-        such as software development, artificial intelligence, and cybersecurity. Let's connect and explore ways we can collaborate to 
-        drive innovation in the field of computer science!
-    </p>
+                <p>
+        In Summer 2021, I began working at a year-long internship with a startup company called CreateMe Technologies in San Francisco, 
+        where I contributed to robotics software development and led the creation of a full-stack Flask web application for a robotics simulation. 
+        During my time at CreateMe, I gained hands-on experience in object detection, deep reinforcement learning, and worked with tools 
+        such as Azure, Git, and Docker to support automation and robotics systems.
+                </p>
 
-    <a href="index.html">Return back to Home</a>
+                <p>
+        After my internship, in Fall 2022 I helped co-found an early-stage startup with my fraternity brothers, where I led the 
+        Data Science team in building the company's database and developing machine learning models for user preference recommendations. 
+        I am currently working with this project part time and eager to go public soon! [More information on the company here.]
+                </p>
+                <p>
+        I am now eager to apply my technical skills to impactful projects in software development and machine learning. I look forward 
+        to connecting with like-minded professionals who are passionate about using technology to drive innovation.
+                </p>
+                <div class="cta">
+                    <a class="btn btn-primary" href="mailto:aalamo01@berkeley.edu">Email Me</a>
+                    <a class="btn" href="https://www.linkedin.com/in/adrian-alamo-4b561b175/?original_referer=">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">© <span data-year></span> Adrian Alamo</div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

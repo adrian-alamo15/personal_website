@@ -4,9 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alamo - Projects</title>
+    <title>Adrian Alamo – Projects</title>
+    <meta name="description" content="Selected projects by Adrian Alamo across ML, algorithms, and full‑stack." />
+    <link rel="icon" href="/Users/adrian/Desktop/personal_website/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="index.html">Return back to Home</a>
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html"><span class="brand-logo"></span> <span>Adrian Alamo</span></a>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container content">
+        <h1>Projects</h1>
+        <p class="lead">Selected work across ML, systems, and full‑stack.</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>Language Identification with RNNs</h3>
+                <p>Character‑level RNN for 5‑language word classification (>90% accuracy).</p>
+                <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">RNN</span></div>
+            </div>
+            <div class="card">
+                <h3>Pac‑Man Reinforcement Learning</h3>
+                <p>Value Iteration and Q‑Learning agents for maze navigation.</p>
+                <div class="tags"><span class="tag">Reinforcement Learning</span><span class="tag">NumPy</span></div>
+            </div>
+            <div class="card">
+                <h3>End‑to‑End Encrypted File Sharing</h3>
+                <p>Client API with RSA, signatures, and access control.</p>
+                <div class="tags"><span class="tag">Golang</span><span class="tag">Crypto</span></div>
+            </div>
+            <div class="card">
+                <h3>Bear Maps</h3>
+                <p>Java web mapping backend with A* routing and KD‑Tree search.</p>
+                <div class="tags"><span class="tag">Java</span><span class="tag">Algorithms</span></div>
+            </div>
+            <div class="card">
+                <h3>Movie Classification</h3>
+                <p>KNN classifier with exploratory analysis and visualization.</p>
+                <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">© <span data-year></span> Adrian Alamo</div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

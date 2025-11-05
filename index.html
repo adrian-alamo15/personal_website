@@ -4,18 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alamo - Home</title>
-    <h1>Adrian Alamo</h1>
+    <meta name="description" content="Portfolio of Adrian Alamo – software developer with interests in ML, security, and full‑stack." />
+    <title>Adrian Alamo – Portfolio</title>
+    <link rel="icon" href="/Users/adrian/Desktop/personal_website/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<nav>
-    <ul>
-        <li><a href="resume.html"> My Resume</a></li>
-        <li><a href="projects.html"> My Projects</a></li>
-        <li><a href="about.html"> About Me</a></li>
-    </ul> 
-</nav>
 <body>
-    
+    <nav class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html"><span class="brand-logo"></span> <span>Adrian Alamo</span></a>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container content">
+        <section class="hero">
+            <div>
+                <h1>Building useful software with curiosity and care</h1>
+                <p class="lead">UC Berkeley CS student focused on ML, security, and full‑stack development. I like turning complex ideas into simple, reliable products.</p>
+                <div class="cta">
+                    <a class="btn btn-primary" href="projects.html">View Projects</a>
+                    <a class="btn" href="resume.html">View Resume</a>
+                    <a class="btn" href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="hero-card">
+                <h3>Currently</h3>
+                <p>Graduating Spring 2025. Exploring roles in software engineering and ML engineering. Open to full‑time and internship opportunities.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Language ID with RNNs</h3>
+                    <p>Character‑level RNN achieving >90% accuracy across 5 languages.</p>
+                    <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">RNN</span></div>
+                </div>
+                <div class="card">
+                    <h3>Pac‑Man RL Agents</h3>
+                    <p>Value Iteration and Q‑Learning agents for classic maze navigation.</p>
+                    <div class="tags"><span class="tag">Reinforcement Learning</span><span class="tag">NumPy</span></div>
+                </div>
+                <div class="card">
+                    <h3>Secure File Sharing</h3>
+                    <p>Client API with RSA, signatures, and access control for E2E sharing.</p>
+                    <div class="tags"><span class="tag">Golang</span><span class="tag">Crypto</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in touch</h2>
+            <p>Prefer email or LinkedIn.</p>
+            <div class="cta">
+                <a class="btn btn-primary" href="mailto:aalamo01@berkeley.edu">Email Me</a>
+                <a class="btn" href="https://www.linkedin.com/in/adrian-alamo-4b561b175/?original_referer=">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">© <span data-year></span> Adrian Alamo</div>
+    </footer>
+
+    <script src="script.js"></script>
     
 </body>
 </html>
+
+
