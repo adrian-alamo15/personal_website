@@ -23,7 +23,7 @@ h1 {
 }
 /* Ensure high contrast for body copy */
 p, li {
-    color: #111827;
+    color: #111827 !important;
 }
 
 header {
