@@ -16,6 +16,12 @@ body {
   background-color: #fff;
 }
 
+@media (max-width: 640px) {
+  body { margin: 16px; font-size: 17px; }
+  .container { padding: 12px; }
+  .center { width: 100%; }
+}
+
 /* Style the heading */
 h1 {
   text-align: center;
