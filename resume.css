@@ -3,6 +3,9 @@ body {
     margin: 50px;
     padding: 0;
     background-color: #f3f3f3;
+    color: #111827;
+    font-size: 18px;
+    line-height: 1.7;
 }
 
 /* Center the content and set maximum width */
@@ -17,6 +20,10 @@ body {
 h1 {
     text-align: center;
     color: #333;
+}
+/* Ensure high contrast for body copy */
+p, li {
+    color: #111827;
 }
 
 header {
