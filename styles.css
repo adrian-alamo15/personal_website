@@ -95,4 +95,16 @@ footer { margin-top: 40px; padding: 16px 0; border-top: 1px solid var(--border);
   .hero h1 { font-size: 32px; }
 }
 
+/* Slider */
+.slider { position: relative; margin-top: 16px; }
+.slider-track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+.slider-track::-webkit-scrollbar { height: 8px; }
+.slider-track::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+.slide { scroll-snap-align: start; flex: 0 0 300px; }
+.slider .card { height: 100%; }
+.slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: #ffffff; border: 1px solid var(--border); border-radius: 999px; width: 36px; height: 36px; display: grid; place-items: center; color: var(--muted); cursor: pointer; }
+.slider-btn:hover { color: var(--text); }
+.slider-btn.prev { left: -6px; }
+.slider-btn.next { right: -6px; }
+
 
