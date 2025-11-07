@@ -69,7 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('project-modal');
   const modalTitle = document.getElementById('modal-title');
   const modalDescription = document.getElementById('modal-description');
-  const modalGithub = document.getElementById('modal-github');
   const modalClose = document.querySelector('.modal-close');
   const modalOverlay = document.querySelector('.modal-overlay');
   const projectCards = document.querySelectorAll('.project-card');
@@ -77,11 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function openModal(card) {
     const title = card.getAttribute('data-title');
     const description = card.getAttribute('data-description');
-    const github = card.getAttribute('data-github');
 
     modalTitle.textContent = title;
     modalDescription.textContent = description;
-    modalGithub.href = github;
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
   }

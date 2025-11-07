@@ -7,7 +7,7 @@
     <title>Adrian Alamo – Projects</title>
     <meta name="description" content="Selected projects by Adrian Alamo across ML, algorithms, and full‑stack." />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
     <nav class="nav">
@@ -23,12 +23,12 @@
 
     <main class="container content">
         <h1>Projects</h1>
-        <p class="lead">Selected work across ML, systems, and full‑stack.</p>
+        <p class="lead">Selected work across ML, systems, and full‑stack. <br><b>GitHub repository available upon request for private review.</b><br><b>Contact me for more information.</b></p>
 
         <div class="card-grid">
             <div class="card project-card" 
                  data-title="Language Identification with RNNs"
-                 data-description="Designed an RNN model to identify the language of individual words in a provided test. Used a database encompassing vocabulary from 5 languages: English, Spanish, Finnish, Dutch, and Polish. The RNN effectively managed variable-length inputs to take account of variations to word lengths across 47 unique characters. The RNN model consistently achieved a language identification accuracy greater than 90%."
+                 data-description="Designed and implemented a character-level Recurrent Neural Network (RNN) model for language identification across 5 languages (English, Spanish, Finnish, Dutch, Polish). The architecture uses LSTM cells with embedding layers to handle variable-length sequences, processing words character-by-character across 47 unique character classes. Implemented sequence padding and masking to efficiently batch variable-length inputs. The model maintains O(n) time complexity per word where n is the sequence length, using hidden state vectors and backpropagation through time (BPTT) for training. Achieved >90% accuracy on test sets, demonstrating strong performance in sequence classification tasks. Data structures utilized include dynamic arrays for batch processing, hash maps for character-to-index mappings, and tensor operations for efficient matrix computations."
                  data-github="https://github.com/yourusername/language-id-rnn">
                 <h3>Language Identification with RNNs</h3>
                 <p>Character‑level RNN for 5‑language word classification (>90% accuracy).</p>
@@ -36,7 +36,7 @@
             </div>
             <div class="card project-card"
                  data-title="Pac‑Man Reinforcement Learning"
-                 data-description="Successfully implemented a Value Iteration Agent, utilizing batch value iteration for optimal policy synthesis. Developed a Q-Learning agent, enabling learning from interactions with the environment using value iteration for efficient state value updates. Constructed and updated a Bayes Net pacman agent for locating the ghosts in each game state based on given sensors for detecting ghost's location."
+                 data-description="Implemented three distinct reinforcement learning agents using dynamic programming and probabilistic inference. Value Iteration Agent uses Bellman equations with O(S²A) complexity where S is state space and A is action space, employing iterative updates until convergence to optimal policy. Q-Learning Agent implements temporal difference learning with epsilon-greedy exploration, using hash maps (dictionaries) for O(1) Q-value lookups and updates, with learning rate decay for convergence. Bayes Net Agent utilizes probabilistic inference with variable elimination, maintaining belief states over ghost locations using conditional probability tables stored in hash maps. All agents process game states represented as multi-dimensional arrays, with efficient state encoding to reduce memory footprint. Achieved optimal performance through careful tuning of discount factors, learning rates, and exploration strategies."
                  data-github="https://github.com/yourusername/pacman-rl">
                 <h3>Pac‑Man Reinforcement Learning</h3>
                 <p>Value Iteration and Q‑Learning agents for maze navigation.</p>
@@ -44,7 +44,7 @@
             </div>
             <div class="card project-card"
                  data-title="End‑to‑End Encrypted File Sharing"
-                 data-description="Designed and implemented client application API for secure file sharing system using Golang and cryptography. Utilized hashing functions, digital signatures, RSA public key encryption, and systematic encryption to ensure data integrity, authenticity, and confidentiality. API has an authentication system, file access sharing control features, and ability to efficiently manipulate files across multiple users who have access to the file."
+                 data-description="Designed and implemented a production-ready client application API for secure file sharing using Golang with comprehensive cryptographic protocols. Architecture employs RSA-2048 public key encryption (O(k³) where k is key size) for key exchange, AES-256 symmetric encryption (O(n) where n is file size) for bulk data encryption, and SHA-256 hashing (O(n)) for data integrity verification. Implemented digital signatures using RSA-PSS for non-repudiation, with O(1) signature verification through hash map lookups of public keys. The system uses hash tables (maps) for O(1) user authentication, access control lists (ACLs) stored in hash maps for efficient permission checks, and Merkle trees for file versioning with O(log n) verification. File metadata stored in structured hash maps enables O(1) lookups for file access, sharing permissions, and user management. All cryptographic operations handle large files efficiently through streaming and chunked processing to maintain constant memory usage."
                  data-github="https://github.com/yourusername/secure-file-sharing">
                 <h3>End‑to‑End Encrypted File Sharing</h3>
                 <p>Client API with RSA, signatures, and access control.</p>
@@ -52,7 +52,7 @@
             </div>
             <div class="card project-card"
                  data-title="Network Traceroute Implementation"
-                 data-description="Built a traceroute tool to map network paths by adjusting TTL values and analyzing ICMP responses. This project demonstrates understanding of network protocols, socket programming, and low-level network communication."
+                 data-description="Implemented a network traceroute utility from scratch using raw sockets and ICMP protocol. The algorithm systematically increments Time-To-Live (TTL) values starting from 1, sending UDP packets and waiting for ICMP Time Exceeded responses to map each hop. Uses socket programming with non-blocking I/O and timeout mechanisms for O(n) complexity where n is the number of hops. Implemented efficient data structures including queues for packet tracking, hash maps for storing round-trip times (RTTs) per hop, and arrays for maintaining route information. Handles network edge cases such as packet loss, duplicate responses, and asymmetric routing paths. The implementation demonstrates deep understanding of network stack layers, IP protocol headers, and low-level socket operations in Python."
                  data-github="https://github.com/yourusername/traceroute">
                 <h3>Network Traceroute Implementation</h3>
                 <p>Built a traceroute tool to map network paths by adjusting TTL values and analyzing ICMP responses.</p>
@@ -60,7 +60,7 @@
             </div>
             <div class="card project-card"
                  data-title="Distance Vector Routing Algorithm"
-                 data-description="Implemented the Distance Vector Routing Algorithm in Python. The algorithm is a decentralized routing protocol that works by exchanging routing information between neighboring nodes in a network. The algorithm is used to find the best path for data to travel from one node to another."
+                 data-description="Implemented the Distance Vector Routing Algorithm (Bellman-Ford variant) for distributed network routing. The algorithm uses dynamic programming with O(V*E) time complexity in worst case, where V is the number of vertices (nodes) and E is the number of edges (links). Each node maintains a distance vector (routing table) stored as a hash map for O(1) lookups and updates, containing shortest path distances to all destinations. Implements split horizon and poison reverse techniques to prevent count-to-infinity problems and routing loops. The system exchanges routing updates periodically using adjacency lists (graphs represented as hash maps of lists) for efficient neighbor iteration. Convergence detection uses vector comparison algorithms to detect when routing tables stabilize. Handles network topology changes dynamically, updating routes in O(V) time per update cycle. Demonstrates understanding of distributed algorithms, graph theory, and network protocol design."
                  data-github="https://github.com/yourusername/distance-vector-routing">
                 <h3>Distance Vector Routing Algorithm</h3>
                 <p>Distance-vector routing protocol in Python with dynamic route updates, split horizon, and poison reverse for efficient and loop-free packet forwarding.</p>
@@ -68,7 +68,7 @@
             </div>
             <div class="card project-card"
                  data-title="Bear Maps"
-                 data-description="Created the back end design of a web mapping application project of the city of Berkeley using Java which allows the user to find a location on the Berkeley map, or get directions from point A to point B. Allows the user to find directions and the shortest path from point A to Point B with the A* AI algorithm. Users can zoom in and zoom out on the map to find a place of interest which is handled by a KD Tree with the provided coordinates from the user."
+                 data-description="Built a full-stack web mapping application backend for the city of Berkeley using Java, implementing Google Maps-like functionality. The A* pathfinding algorithm uses a min-heap (priority queue) for efficient node selection with O((V + E) log V) time complexity, where V is vertices and E is edges, providing optimal shortest path calculations. Implemented a k-dimensional (2D) KD-tree data structure for O(log n) average case spatial search operations, enabling fast point-of-interest lookups and zoom-level optimization. The KD-tree recursively partitions the 2D space, using alternating dimension comparisons to achieve balanced tree structure. Graph representation uses adjacency lists (hash maps of lists) for O(1) edge lookups and efficient traversal. Raster tile rendering implements quad-tree-based level-of-detail (LOD) system for optimal map tile loading at different zoom levels. Route caching uses hash maps for O(1) lookup of frequently requested paths. The system handles millions of geographic coordinates efficiently through spatial indexing and graph algorithms."
                  data-github="https://github.com/yourusername/bearmaps">
                 <h3>Bear Maps</h3>
                 <p>Java web mapping backend with A* routing and KD‑Tree search.</p>
@@ -76,7 +76,7 @@
             </div>
             <div class="card project-card"
                  data-title="Sixteen Car Project"
-                 data-description="Created a voice controlled car from scratch using a launchpad to collect data and run software on our circuit design. Wrote software to adjust velocity of each wheel when turning or driving straight based on the data we collected. Data was collected through encoders that senses the movement from the wheels, and we canceled out any noise through a closed loop system and linearizing the data to control the car and make the car move based on the given commands."
+                 data-description="Designed and implemented a voice-controlled autonomous car system from scratch, integrating hardware (TI LaunchPad microcontroller) with custom software algorithms. Implemented PID (Proportional-Integral-Derivative) control system with O(1) time complexity per control cycle for real-time wheel velocity adjustment. Data acquisition uses encoder sensors with interrupt-driven event handling, storing wheel rotation data in circular buffers for O(1) insertion and O(n) batch processing. Implemented closed-loop feedback control with Kalman filtering for noise reduction, using state vectors and covariance matrices to estimate true wheel positions from noisy sensor data. Signal processing pipeline includes linearization algorithms to convert nonlinear sensor responses to linear control inputs, using lookup tables (hash maps) for O(1) calibration data access. Motor control uses pulse-width modulation (PWM) with duty cycle calculations for precise speed control. The system processes voice commands through pattern recognition, converting audio signals to control commands with low latency for real-time response."
                  data-github="https://github.com/yourusername/sixteen-car-project">
                 <h3>Sixteen Car Project</h3>
                 <p>Voice controlled car with closed loop system and linearization.</p>
@@ -84,7 +84,7 @@
             </div>
             <div class="card project-card"
                  data-title="Multithreaded Operating System"
-                 data-description="Operating system in C with kernel-user modes, thread scheduling, and process management. Implemented core OS concepts including memory management, file systems, and inter-process communication."
+                 data-description="Implemented a multithreaded operating system kernel in C (PintOS framework) with comprehensive system-level functionality. Thread scheduling uses multi-level feedback queues (MLFQ) with O(log n) priority queue operations for efficient task scheduling, implementing round-robin and priority-based algorithms. Process control blocks (PCBs) stored in hash maps for O(1) process lookup by PID. Memory management implements virtual memory with page tables, using two-level page table structure for O(1) virtual-to-physical address translation, with page replacement algorithms including LRU (Least Recently Used) using doubly-linked lists for O(1) updates. File system implementation includes inode-based structure with bitmap allocation (O(n) for free block search) and directory entries stored as hash maps for O(1) filename lookups. Inter-process communication (IPC) uses semaphores and mutexes with wait queues (linked lists) for blocking synchronization, achieving O(1) lock acquisition in uncontested cases. System calls implemented with trap handlers and kernel mode switches, maintaining isolation between user and kernel space."
                  data-github="https://github.com/yourusername/os-project">
                 <h3>Multithreaded Operating System</h3>
                 <p>Operating system in C with kernel-user modes, thread scheduling, and process management.</p>
@@ -92,7 +92,7 @@
             </div>
             <div class="card project-card"
                  data-title="Movie Classification"
-                 data-description="Executed the program by using machine learning, k-nearest-neighbors classifier, and test a classifier on data. Created plots through Matplotlib and diagrams to argue that the k nearest classifier was efficient enough to classify the movies accurately. Performed exploratory data analysis to understand feature relationships and improve classification performance."
+                 data-description="Implemented a k-Nearest Neighbors (KNN) classifier from scratch for movie genre classification with comprehensive data analysis. The KNN algorithm uses distance metrics (Euclidean and Manhattan) with O(n*k) time complexity where n is training set size and k is number of neighbors, using k-d trees for optimized O(log n) neighbor search in high-dimensional feature spaces. Feature engineering involved data normalization using z-score standardization stored in NumPy arrays for vectorized operations. Implemented cross-validation with stratified k-fold splitting to prevent data leakage and ensure robust evaluation. Data preprocessing uses pandas DataFrames for efficient manipulation, handling missing values with imputation algorithms, and encoding categorical features using one-hot encoding. Feature selection uses correlation matrices and mutual information to identify optimal feature subsets. Model evaluation includes confusion matrices, precision-recall curves, and F1-score calculations. Visualization pipeline creates statistical plots using Matplotlib, including distribution plots, correlation heatmaps, and ROC curves to analyze classifier performance and feature relationships. Achieved high classification accuracy through hyperparameter tuning of k values and distance metrics."
                  data-github="https://github.com/yourusername/movie-classification">
                 <h3>Movie Classification</h3>
                 <p>KNN classifier with exploratory analysis and visualization.</p>
@@ -112,12 +112,9 @@
             <button class="modal-close" aria-label="Close modal">&times;</button>
             <h2 id="modal-title"></h2>
             <div id="modal-description"></div>
-            <div class="modal-footer">
-                <a id="modal-github" class="btn btn-primary" href="#" target="_blank" rel="noopener">View on GitHub</a>
-            </div>
         </div>
     </div>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

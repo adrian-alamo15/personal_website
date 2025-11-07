@@ -126,8 +126,7 @@ footer { margin-top: 40px; padding: 16px 0; border-top: 1px solid var(--border);
 .modal-close { position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 32px; color: var(--muted); cursor: pointer; line-height: 1; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 6px; }
 .modal-close:hover { background: rgba(0,0,0,0.05); color: var(--text); }
 .modal-content h2 { margin: 0 0 16px; color: var(--text); }
-#modal-description { color: var(--text); line-height: 1.7; margin-bottom: 20px; white-space: pre-line; }
-.modal-footer { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--border); }
+#modal-description { color: var(--text); line-height: 1.7; white-space: pre-line; }
 
 @media (max-width: 640px) {
   .modal-content { margin: 20px 16px; padding: 20px; max-height: 90vh; }
