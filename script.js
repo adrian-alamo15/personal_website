@@ -64,6 +64,46 @@ document.addEventListener('DOMContentLoaded', () => {
     if (prevBtn) prevBtn.addEventListener('click', () => sliderTrack.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' }));
     if (nextBtn) nextBtn.addEventListener('click', () => sliderTrack.scrollBy({ left: scrollByAmount(), behavior: 'smooth' }));
   }
+
+  // Project modal functionality
+  const modal = document.getElementById('project-modal');
+  const modalTitle = document.getElementById('modal-title');
+  const modalDescription = document.getElementById('modal-description');
+  const modalGithub = document.getElementById('modal-github');
+  const modalClose = document.querySelector('.modal-close');
+  const modalOverlay = document.querySelector('.modal-overlay');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  function openModal(card) {
+    const title = card.getAttribute('data-title');
+    const description = card.getAttribute('data-description');
+    const github = card.getAttribute('data-github');
+
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+    modalGithub.href = github;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+
+  // Open modal on card click
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => openModal(card));
+  });
+
+  // Close modal on close button, overlay, or Escape key
+  if (modalClose) modalClose.addEventListener('click', closeModal);
+  if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal && modal.getAttribute('aria-hidden') === 'false') {
+      closeModal();
+    }
+  });
 });
 
 
