@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adrian Alamo – Projects</title>
     <meta name="description" content="Selected projects by Adrian Alamo across ML, algorithms, and full‑stack." />
+    <meta name="theme-color" content="#0d9488">
+    <meta property="og:title" content="Adrian Alamo — Projects" />
+    <meta property="og:description" content="Selected projects across ML, systems, and full-stack by Adrian Alamo." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css?v=5">
 </head>
@@ -19,6 +24,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="https://github.com/adrian-alamo15" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
@@ -31,6 +37,7 @@
                  data-title="ARES – Augmented Reality Ethnic Studies"
                  data-description="Led the development of an open-source augmented reality web application integrating AR into the Ethnic Studies curriculum at UC Berkeley, in collaboration with Professor Pablo Gonzalez and the Ethnic Studies Changemaker Studios. Built with React and A-Frame, the app layers historical content and political narratives directly onto physical campus locations viewed through a mobile device. Designed and implemented the AR scene management system, geolocation-triggered content delivery, and a responsive UI compatible across mobile browsers. Conducted extensive cross-device testing to ensure reliability and performance on low-end hardware. Deployed as a live demo on GitHub Pages. The project demonstrates full-stack web development, WebAR integration, and cross-functional collaboration with academic stakeholders."
                  >
+                <span class="badge">Featured</span>
                 <h3>ARES – Augmented Reality Ethnic Studies</h3>
                 <p>Open-source AR web app overlaying UC Berkeley's political history onto campus locations, built with React and A-Frame.</p>
                 <div class="tags"><span class="tag">React</span><span class="tag">A-Frame</span><span class="tag">WebAR</span><span class="tag">JavaScript</span></div>
@@ -95,6 +102,7 @@
                  data-title="Multithreaded Operating System"
                  data-description="Implemented a multithreaded operating system kernel in C (PintOS framework) with comprehensive system-level functionality. Thread scheduling uses multi-level feedback queues (MLFQ) with O(log n) priority queue operations for efficient task scheduling, implementing round-robin and priority-based algorithms. Process control blocks (PCBs) stored in hash maps for O(1) process lookup by PID. Memory management implements virtual memory with page tables, using two-level page table structure for O(1) virtual-to-physical address translation, with page replacement algorithms including LRU (Least Recently Used) using doubly-linked lists for O(1) updates. File system implementation includes inode-based structure with bitmap allocation (O(n) for free block search) and directory entries stored as hash maps for O(1) filename lookups. Inter-process communication (IPC) uses semaphores and mutexes with wait queues (linked lists) for blocking synchronization, achieving O(1) lock acquisition in uncontested cases. System calls implemented with trap handlers and kernel mode switches, maintaining isolation between user and kernel space."
                  >
+                <span class="badge">Featured</span>
                 <h3>Multithreaded Operating System</h3>
                 <p>Operating system in C with kernel-user modes, thread scheduling, and process management.</p>
                 <div class="tags"><span class="tag">C</span><span class="tag">PintOS</span></div>
@@ -131,6 +139,7 @@
         </div>
     </div>
 
+    <button id="back-to-top" aria-label="Back to top">↑</button>
     <script src="script.js?v=5"></script>
 </body>
 </html>
