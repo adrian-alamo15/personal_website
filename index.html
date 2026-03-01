@@ -45,7 +45,53 @@
             <h2>Featured Projects</h2>
             <div class="slider">
                 <button class="slider-btn prev" aria-label="Previous">‹</button>
-                <div class="slider-track" id="projects-slider"></div>
+                <div class="slider-track" id="projects-slider">
+                    <div class="slide">
+                        <div class="card project-card"
+                             data-title="ARES – Augmented Reality Ethnic Studies"
+                             data-description="Led the development of an open-source augmented reality web application integrating AR into the Ethnic Studies curriculum at UC Berkeley, in collaboration with Professor Pablo Gonzalez and the Ethnic Studies Changemaker Studios. Built with React and A-Frame, the app layers historical content and political narratives directly onto physical campus locations viewed through a mobile device. Designed and implemented the AR scene management system, geolocation-triggered content delivery, and a responsive UI compatible across mobile browsers. Deployed as a live demo on GitHub Pages.">
+                            <h3>ARES – Augmented Reality Ethnic Studies</h3>
+                            <p>Open-source AR web app overlaying UC Berkeley's political history onto campus locations, built with React and A-Frame.</p>
+                            <div class="tags"><span class="tag">React</span><span class="tag">A-Frame</span><span class="tag">WebAR</span><span class="tag">JavaScript</span></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="card project-card"
+                             data-title="End‑to‑End Encrypted File Sharing"
+                             data-description="Designed and implemented a production-ready client application API for secure file sharing using Golang with comprehensive cryptographic protocols. Architecture employs RSA-2048 public key encryption for key exchange, AES-256 symmetric encryption for bulk data encryption, and SHA-256 hashing for data integrity verification. Implemented digital signatures using RSA-PSS for non-repudiation. The system uses hash tables for O(1) user authentication, access control lists stored in hash maps for efficient permission checks, and Merkle trees for file versioning. All cryptographic operations handle large files efficiently through streaming and chunked processing.">
+                            <h3>End‑to‑End Encrypted File Sharing</h3>
+                            <p>Client API with RSA, digital signatures, and access control built in Go.</p>
+                            <div class="tags"><span class="tag">Golang</span><span class="tag">Crypto</span></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="card project-card"
+                             data-title="Multithreaded Operating System"
+                             data-description="Implemented a multithreaded operating system kernel in C (PintOS framework) with comprehensive system-level functionality. Thread scheduling uses multi-level feedback queues (MLFQ) with O(log n) priority queue operations. Memory management implements virtual memory with page tables for O(1) virtual-to-physical address translation, with LRU page replacement. File system implementation includes inode-based structure and directory entries stored as hash maps for O(1) filename lookups. Inter-process communication uses semaphores and mutexes with wait queues for blocking synchronization.">
+                            <h3>Multithreaded Operating System</h3>
+                            <p>OS kernel in C with thread scheduling, virtual memory, and a full file system.</p>
+                            <div class="tags"><span class="tag">C</span><span class="tag">PintOS</span></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="card project-card"
+                             data-title="Bear Maps"
+                             data-description="Built a full-stack web mapping application backend for the city of Berkeley using Java, implementing Google Maps-like functionality. The A* pathfinding algorithm uses a min-heap priority queue for efficient node selection with O((V + E) log V) time complexity. Implemented a k-dimensional KD-tree data structure for O(log n) average case spatial search operations, enabling fast point-of-interest lookups. Graph representation uses adjacency lists for O(1) edge lookups and raster tile rendering implements a quad-tree-based level-of-detail system for optimal map tile loading at different zoom levels.">
+                            <h3>Bear Maps</h3>
+                            <p>Java web mapping backend with A* routing and KD‑Tree spatial search.</p>
+                            <div class="tags"><span class="tag">Java</span><span class="tag">Algorithms</span></div>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="card project-card"
+                             data-title="Language Identification with RNNs"
+                             data-description="Designed and implemented a character-level Recurrent Neural Network (RNN) model for language identification across 5 languages (English, Spanish, Finnish, Dutch, Polish). The architecture uses LSTM cells with embedding layers to handle variable-length sequences, processing words character-by-character across 47 unique character classes. Implemented sequence padding and masking to efficiently batch variable-length inputs. Achieved >90% accuracy on test sets, demonstrating strong performance in sequence classification tasks.">
+                            <h3>Language Identification with RNNs</h3>
+                            <p>Character‑level RNN for 5‑language word classification with >90% accuracy.</p>
+                            <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">RNN</span></div>
+                        </div>
+                    </div>
+                </div>
                 <button class="slider-btn next" aria-label="Next">›</button>
             </div>
         </section>
@@ -64,6 +110,16 @@
     <footer>
         <div class="container">© <span data-year></span> Adrian Alamo</div>
     </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h2 id="modal-title"></h2>
+            <div id="modal-description"></div>
+        </div>
+    </div>
 
     <script src="script.js?v=2"></script>
     

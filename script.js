@@ -16,44 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Populate home slider with cards from projects.html
+  // Slider scroll buttons
   const sliderTrack = document.getElementById('projects-slider');
   if (sliderTrack) {
-    sliderTrack.innerHTML = '<div class="slide"><div class="card"><p>Loading projects…</p></div></div>';
-
-    fetch('projects.html', { cache: 'no-cache' })
-      .then(r => {
-        if (!r.ok) throw new Error('Failed to fetch projects.html');
-        return r.text();
-      })
-      .then(html => {
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        let cards = Array.from(doc.querySelectorAll('.card-grid .card'));
-        if (!cards.length) cards = Array.from(doc.querySelectorAll('.card'));
-
-        sliderTrack.innerHTML = '';
-
-        if (!cards.length) {
-          const empty = document.createElement('div');
-          empty.className = 'slide';
-          empty.innerHTML = '<div class="card"><p>No projects found. See all on the <a href="projects.html">Projects page</a>.</p></div>';
-          sliderTrack.appendChild(empty);
-          return;
-        }
-
-        cards.forEach(card => {
-          const wrapper = document.createElement('div');
-          wrapper.className = 'slide';
-          wrapper.appendChild(card.cloneNode(true));
-          sliderTrack.appendChild(wrapper);
-        });
-      })
-      .catch(err => {
-        console.error(err);
-        sliderTrack.innerHTML = '<div class="slide"><div class="card"><p>Unable to load projects. Visit the <a href="projects.html">Projects page</a>.</p></div></div>';
-      });
-
     const prevBtn = document.querySelector('.slider-btn.prev');
     const nextBtn = document.querySelector('.slider-btn.next');
     const scrollByAmount = () => Math.min(500, sliderTrack.clientWidth * 0.9);
