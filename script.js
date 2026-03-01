@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Populate home slider with cards from projects.html
   const sliderTrack = document.getElementById('projects-slider');
   if (sliderTrack) {
-    // Basic placeholder so the section doesn't collapse while loading
     sliderTrack.innerHTML = '<div class="slide"><div class="card"><p>Loading projects…</p></div></div>';
 
     fetch('projects.html', { cache: 'no-cache' })
@@ -30,19 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(html => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
-        // Try preferred selector; fallback to any .card
         let cards = Array.from(doc.querySelectorAll('.card-grid .card'));
         if (!cards.length) cards = Array.from(doc.querySelectorAll('.card'));
 
         sliderTrack.innerHTML = '';
 
         if (!cards.length) {
-          // Fallback UI if no cards found
           const empty = document.createElement('div');
           empty.className = 'slide';
           empty.innerHTML = '<div class="card"><p>No projects found. See all on the <a href="projects.html">Projects page</a>.</p></div>';
           sliderTrack.appendChild(empty);
-          console.warn('No project cards found in projects.html');
           return;
         }
 
@@ -65,42 +61,57 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextBtn) nextBtn.addEventListener('click', () => sliderTrack.scrollBy({ left: scrollByAmount(), behavior: 'smooth' }));
   }
 
-  // Project modal functionality
+  // Project modal
   const modal = document.getElementById('project-modal');
   const modalTitle = document.getElementById('modal-title');
   const modalDescription = document.getElementById('modal-description');
   const modalClose = document.querySelector('.modal-close');
   const modalOverlay = document.querySelector('.modal-overlay');
-  const projectCards = document.querySelectorAll('.project-card');
 
   function openModal(card) {
     const title = card.getAttribute('data-title');
     const description = card.getAttribute('data-description');
+    const github = card.getAttribute('data-github');
 
     modalTitle.textContent = title;
     modalDescription.textContent = description;
+
+    // Remove any previously injected GitHub button
+    const existing = modal.querySelector('.modal-github');
+    if (existing) existing.remove();
+
+    if (github) {
+      const btn = document.createElement('a');
+      btn.className = 'btn btn-primary modal-github';
+      btn.href = github;
+      btn.target = '_blank';
+      btn.rel = 'noopener noreferrer';
+      btn.textContent = 'View on GitHub';
+      modalDescription.insertAdjacentElement('afterend', btn);
+    }
+
     modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
   }
 
   function closeModal() {
     modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = ''; // Restore scrolling
+    document.body.style.overflow = '';
   }
 
-  // Open modal on card click
-  projectCards.forEach(card => {
-    card.addEventListener('click', () => openModal(card));
-  });
+  // Event delegation — catches both static cards and dynamically loaded slider cards
+  if (modal) {
+    document.addEventListener('click', (e) => {
+      const card = e.target.closest('.project-card');
+      if (card) openModal(card);
+    });
 
-  // Close modal on close button, overlay, or Escape key
-  if (modalClose) modalClose.addEventListener('click', closeModal);
-  if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && modal.getAttribute('aria-hidden') === 'false') {
-      closeModal();
-    }
-  });
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+        closeModal();
+      }
+    });
+  }
 });
-
-

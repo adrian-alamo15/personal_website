@@ -14,9 +14,10 @@
         <div class="container nav-inner">
             <a class="brand" href="index.html"><span class="brand-logo"></span> <span>Adrian Alamo</span></a>
             <ul>
-                <li><a href="projects.html">Projects</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
                 <li><a href="resume.html">Resume</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="https://github.com/adrian-alamo15" target="_blank" rel="noopener">GitHub</a></li>
             </ul>
         </div>
     </nav>
@@ -26,10 +27,18 @@
         <p class="lead">Selected work across ML, systems, and full‑stack. <br><b>GitHub repository available upon request for private review.</b><br><b>Contact me for more information.</b></p>
 
         <div class="card-grid">
-            <div class="card project-card" 
+            <div class="card project-card"
+                 data-title="ARES – Augmented Reality Ethnic Studies"
+                 data-description="Led the development of an open-source augmented reality web application integrating AR into the Ethnic Studies curriculum at UC Berkeley, in collaboration with Professor Pablo Gonzalez and the Ethnic Studies Changemaker Studios. Built with React and A-Frame, the app layers historical content and political narratives directly onto physical campus locations viewed through a mobile device. Designed and implemented the AR scene management system, geolocation-triggered content delivery, and a responsive UI compatible across mobile browsers. Conducted extensive cross-device testing to ensure reliability and performance on low-end hardware. Deployed as a live demo on GitHub Pages. The project demonstrates full-stack web development, WebAR integration, and cross-functional collaboration with academic stakeholders."
+                 data-github="https://github.com/adrian-alamo15">
+                <h3>ARES – Augmented Reality Ethnic Studies</h3>
+                <p>Open-source AR web app overlaying UC Berkeley's political history onto campus locations, built with React and A-Frame.</p>
+                <div class="tags"><span class="tag">React</span><span class="tag">A-Frame</span><span class="tag">WebAR</span><span class="tag">JavaScript</span></div>
+            </div>
+            <div class="card project-card"
                  data-title="Language Identification with RNNs"
                  data-description="Designed and implemented a character-level Recurrent Neural Network (RNN) model for language identification across 5 languages (English, Spanish, Finnish, Dutch, Polish). The architecture uses LSTM cells with embedding layers to handle variable-length sequences, processing words character-by-character across 47 unique character classes. Implemented sequence padding and masking to efficiently batch variable-length inputs. The model maintains O(n) time complexity per word where n is the sequence length, using hidden state vectors and backpropagation through time (BPTT) for training. Achieved >90% accuracy on test sets, demonstrating strong performance in sequence classification tasks. Data structures utilized include dynamic arrays for batch processing, hash maps for character-to-index mappings, and tensor operations for efficient matrix computations."
-                 data-github="https://github.com/yourusername/language-id-rnn">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>Language Identification with RNNs</h3>
                 <p>Character‑level RNN for 5‑language word classification (>90% accuracy).</p>
                 <div class="tags"><span class="tag">Python</span><span class="tag">ML</span><span class="tag">RNN</span></div>
@@ -37,7 +46,7 @@
             <div class="card project-card"
                  data-title="Pac‑Man Reinforcement Learning"
                  data-description="Implemented three distinct reinforcement learning agents using dynamic programming and probabilistic inference. Value Iteration Agent uses Bellman equations with O(S²A) complexity where S is state space and A is action space, employing iterative updates until convergence to optimal policy. Q-Learning Agent implements temporal difference learning with epsilon-greedy exploration, using hash maps (dictionaries) for O(1) Q-value lookups and updates, with learning rate decay for convergence. Bayes Net Agent utilizes probabilistic inference with variable elimination, maintaining belief states over ghost locations using conditional probability tables stored in hash maps. All agents process game states represented as multi-dimensional arrays, with efficient state encoding to reduce memory footprint. Achieved optimal performance through careful tuning of discount factors, learning rates, and exploration strategies."
-                 data-github="https://github.com/yourusername/pacman-rl">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>Pac‑Man Reinforcement Learning</h3>
                 <p>Value Iteration and Q‑Learning agents for maze navigation.</p>
                 <div class="tags"><span class="tag">Reinforcement Learning</span><span class="tag">NumPy</span></div>
@@ -45,7 +54,7 @@
             <div class="card project-card"
                  data-title="End‑to‑End Encrypted File Sharing"
                  data-description="Designed and implemented a production-ready client application API for secure file sharing using Golang with comprehensive cryptographic protocols. Architecture employs RSA-2048 public key encryption (O(k³) where k is key size) for key exchange, AES-256 symmetric encryption (O(n) where n is file size) for bulk data encryption, and SHA-256 hashing (O(n)) for data integrity verification. Implemented digital signatures using RSA-PSS for non-repudiation, with O(1) signature verification through hash map lookups of public keys. The system uses hash tables (maps) for O(1) user authentication, access control lists (ACLs) stored in hash maps for efficient permission checks, and Merkle trees for file versioning with O(log n) verification. File metadata stored in structured hash maps enables O(1) lookups for file access, sharing permissions, and user management. All cryptographic operations handle large files efficiently through streaming and chunked processing to maintain constant memory usage."
-                 data-github="https://github.com/yourusername/secure-file-sharing">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>End‑to‑End Encrypted File Sharing</h3>
                 <p>Client API with RSA, signatures, and access control.</p>
                 <div class="tags"><span class="tag">Golang</span><span class="tag">Crypto</span></div>
@@ -53,7 +62,7 @@
             <div class="card project-card"
                  data-title="Network Traceroute Implementation"
                  data-description="Implemented a network traceroute utility from scratch using raw sockets and ICMP protocol. The algorithm systematically increments Time-To-Live (TTL) values starting from 1, sending UDP packets and waiting for ICMP Time Exceeded responses to map each hop. Uses socket programming with non-blocking I/O and timeout mechanisms for O(n) complexity where n is the number of hops. Implemented efficient data structures including queues for packet tracking, hash maps for storing round-trip times (RTTs) per hop, and arrays for maintaining route information. Handles network edge cases such as packet loss, duplicate responses, and asymmetric routing paths. The implementation demonstrates deep understanding of network stack layers, IP protocol headers, and low-level socket operations in Python."
-                 data-github="https://github.com/yourusername/traceroute">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>Network Traceroute Implementation</h3>
                 <p>Built a traceroute tool to map network paths by adjusting TTL values and analyzing ICMP responses.</p>
                 <div class="tags"><span class="tag">Python</span><span class="tag">Network</span></div>
@@ -61,7 +70,7 @@
             <div class="card project-card"
                  data-title="Distance Vector Routing Algorithm"
                  data-description="Implemented the Distance Vector Routing Algorithm (Bellman-Ford variant) for distributed network routing. The algorithm uses dynamic programming with O(V*E) time complexity in worst case, where V is the number of vertices (nodes) and E is the number of edges (links). Each node maintains a distance vector (routing table) stored as a hash map for O(1) lookups and updates, containing shortest path distances to all destinations. Implements split horizon and poison reverse techniques to prevent count-to-infinity problems and routing loops. The system exchanges routing updates periodically using adjacency lists (graphs represented as hash maps of lists) for efficient neighbor iteration. Convergence detection uses vector comparison algorithms to detect when routing tables stabilize. Handles network topology changes dynamically, updating routes in O(V) time per update cycle. Demonstrates understanding of distributed algorithms, graph theory, and network protocol design."
-                 data-github="https://github.com/yourusername/distance-vector-routing">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>Distance Vector Routing Algorithm</h3>
                 <p>Distance-vector routing protocol in Python with dynamic route updates, split horizon, and poison reverse for efficient and loop-free packet forwarding.</p>
                 <div class="tags"><span class="tag">Python</span><span class="tag">Network</span></div>
@@ -69,7 +78,7 @@
             <div class="card project-card"
                  data-title="Bear Maps"
                  data-description="Built a full-stack web mapping application backend for the city of Berkeley using Java, implementing Google Maps-like functionality. The A* pathfinding algorithm uses a min-heap (priority queue) for efficient node selection with O((V + E) log V) time complexity, where V is vertices and E is edges, providing optimal shortest path calculations. Implemented a k-dimensional (2D) KD-tree data structure for O(log n) average case spatial search operations, enabling fast point-of-interest lookups and zoom-level optimization. The KD-tree recursively partitions the 2D space, using alternating dimension comparisons to achieve balanced tree structure. Graph representation uses adjacency lists (hash maps of lists) for O(1) edge lookups and efficient traversal. Raster tile rendering implements quad-tree-based level-of-detail (LOD) system for optimal map tile loading at different zoom levels. Route caching uses hash maps for O(1) lookup of frequently requested paths. The system handles millions of geographic coordinates efficiently through spatial indexing and graph algorithms."
-                 data-github="https://github.com/yourusername/bearmaps">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>Bear Maps</h3>
                 <p>Java web mapping backend with A* routing and KD‑Tree search.</p>
                 <div class="tags"><span class="tag">Java</span><span class="tag">Algorithms</span></div>
@@ -77,7 +86,7 @@
             <div class="card project-card"
                  data-title="Sixteen Car Project"
                  data-description="Designed and implemented a voice-controlled autonomous car system from scratch, integrating hardware (TI LaunchPad microcontroller) with custom software algorithms. Implemented PID (Proportional-Integral-Derivative) control system with O(1) time complexity per control cycle for real-time wheel velocity adjustment. Data acquisition uses encoder sensors with interrupt-driven event handling, storing wheel rotation data in circular buffers for O(1) insertion and O(n) batch processing. Implemented closed-loop feedback control with Kalman filtering for noise reduction, using state vectors and covariance matrices to estimate true wheel positions from noisy sensor data. Signal processing pipeline includes linearization algorithms to convert nonlinear sensor responses to linear control inputs, using lookup tables (hash maps) for O(1) calibration data access. Motor control uses pulse-width modulation (PWM) with duty cycle calculations for precise speed control. The system processes voice commands through pattern recognition, converting audio signals to control commands with low latency for real-time response."
-                 data-github="https://github.com/yourusername/sixteen-car-project">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>Sixteen Car Project</h3>
                 <p>Voice controlled car with closed loop system and linearization.</p>
                 <div class="tags"><span class="tag">Python</span><span class="tag">Embedded Systems</span><span class="tag">Circuit Design</span></div>
@@ -85,7 +94,7 @@
             <div class="card project-card"
                  data-title="Multithreaded Operating System"
                  data-description="Implemented a multithreaded operating system kernel in C (PintOS framework) with comprehensive system-level functionality. Thread scheduling uses multi-level feedback queues (MLFQ) with O(log n) priority queue operations for efficient task scheduling, implementing round-robin and priority-based algorithms. Process control blocks (PCBs) stored in hash maps for O(1) process lookup by PID. Memory management implements virtual memory with page tables, using two-level page table structure for O(1) virtual-to-physical address translation, with page replacement algorithms including LRU (Least Recently Used) using doubly-linked lists for O(1) updates. File system implementation includes inode-based structure with bitmap allocation (O(n) for free block search) and directory entries stored as hash maps for O(1) filename lookups. Inter-process communication (IPC) uses semaphores and mutexes with wait queues (linked lists) for blocking synchronization, achieving O(1) lock acquisition in uncontested cases. System calls implemented with trap handlers and kernel mode switches, maintaining isolation between user and kernel space."
-                 data-github="https://github.com/yourusername/os-project">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>Multithreaded Operating System</h3>
                 <p>Operating system in C with kernel-user modes, thread scheduling, and process management.</p>
                 <div class="tags"><span class="tag">C</span><span class="tag">PintOS</span></div>
@@ -93,7 +102,7 @@
             <div class="card project-card"
                  data-title="Movie Classification"
                  data-description="Implemented a k-Nearest Neighbors (KNN) classifier from scratch for movie genre classification with comprehensive data analysis. The KNN algorithm uses distance metrics (Euclidean and Manhattan) with O(n*k) time complexity where n is training set size and k is number of neighbors, using k-d trees for optimized O(log n) neighbor search in high-dimensional feature spaces. Feature engineering involved data normalization using z-score standardization stored in NumPy arrays for vectorized operations. Implemented cross-validation with stratified k-fold splitting to prevent data leakage and ensure robust evaluation. Data preprocessing uses pandas DataFrames for efficient manipulation, handling missing values with imputation algorithms, and encoding categorical features using one-hot encoding. Feature selection uses correlation matrices and mutual information to identify optimal feature subsets. Model evaluation includes confusion matrices, precision-recall curves, and F1-score calculations. Visualization pipeline creates statistical plots using Matplotlib, including distribution plots, correlation heatmaps, and ROC curves to analyze classifier performance and feature relationships. Achieved high classification accuracy through hyperparameter tuning of k values and distance metrics."
-                 data-github="https://github.com/yourusername/movie-classification">
+                 data-github="https://github.com/adrian-alamo15">
                 <h3>Movie Classification</h3>
                 <p>KNN classifier with exploratory analysis and visualization.</p>
                 <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span></div>
